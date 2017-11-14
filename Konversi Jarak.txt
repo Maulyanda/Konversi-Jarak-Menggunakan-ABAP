@@ -1,0 +1,80 @@
+PARAMETER :
+Amount TYPE p decimals 2,
+Satuan TYPE c length 10.
+
+Data :
+KM  TYPE p decimals 10,
+HM  TYPE p decimals 10,
+DaM TYPE p decimals 10,
+M   TYPE p decimals 10,
+DM  TYPE p decimals 10,
+CM  TYPE p decimals 10,
+MM  TYPE p decimals 10.
+SKIP.
+
+WRITE: 'Konversi Jarak :'.
+IF Satuan = 'KM'.
+   KM  = Amount.
+   HM  = Amount * 10.
+   DaM = Amount * 100.
+   M   = Amount * 1000.
+   DM  = Amount * 10000.
+   CM  = Amount * 100000.
+   MM  = Amount * 1000000.
+ELSEIF Satuan = 'HM'.
+   KM  = Amount / 10.
+   HM  = Amount.
+   DaM = Amount * 10.
+   M   = Amount * 100.
+   DM  = Amount * 1000.
+   CM  = Amount * 10000.
+   MM  = Amount * 100000.
+ELSEIF Satuan = 'DaM'.
+   KM  = Amount / 100.
+   HM  = Amount / 10.
+   DaM = Amount * 10.
+   M   = Amount * 100.
+   DM  = Amount * 1000.
+   CM  = Amount * 10000.
+   MM  = Amount * 100000.
+ELSEIF Satuan = 'M'.
+   KM  = Amount / 1000.
+   HM  = Amount / 100.
+   DaM = Amount / 10.
+   M   = Amount.
+   DM  = Amount * 10.
+   CM  = Amount * 100.
+   MM  = Amount * 1000.
+ELSEIF Satuan = 'DM'.
+   KM  = Amount / 10000.
+   HM  = Amount / 1000.
+   DaM = Amount / 100.
+   M   = Amount / 10.
+   DM  = Amount.
+   CM  = Amount * 10.
+   MM  = Amount * 100.
+ELSEIF Satuan = 'CM'.
+   KM  = Amount / 100000.
+   HM  = Amount / 10000.
+   DaM = Amount / 1000.
+   M   = Amount / 100.
+   DM  = Amount / 10.
+   CM  = Amount.
+   MM  = Amount * 10.
+ELSEIF Satuan = 'MM'.
+   KM  = Amount / 1000000.
+   HM  = Amount / 100000.
+   DaM = Amount / 10000.
+   M   = Amount / 1000.
+   DM  = Amount / 100.
+   CM  = Amount / 10.
+   MM  = Amount.
+ENDIF.
+
+WRITE:/'KM  :', KM.
+WRITE:/'HM  :', HM.
+WRITE:/'DaM :', DaM.
+WRITE:/'M   :', M.
+WRITE:/'DM  :', DM.
+WRITE:/'CM  :', CM.
+WRITE:/'MM  :', MM.
